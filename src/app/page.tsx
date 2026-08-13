@@ -40,7 +40,9 @@ export default function Home() {
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
             DOOMS
           </div>
-          <div className="flex gap-8 items-center">
+          
+          {/* Desktop Nav */}
+          <div className="hidden md:flex gap-8 items-center">
             <Link href="/playground" className="text-white hover:text-accent font-semibold transition-colors bg-white/10 px-4 py-2 rounded-lg border border-white/20 hover:border-accent flex items-center gap-2 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_var(--accent)]">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
               Playground
@@ -49,6 +51,23 @@ export default function Home() {
             <Link href="https://github.com/Rohan-Shinde24/Dooms" target="_blank" className="text-gray-300 hover:text-white transition-colors">GitHub</Link>
             <Link href="https://pypi.org/project/dooms/" target="_blank" className="text-gray-300 hover:text-white transition-colors">PyPI</Link>
           </div>
+
+          {/* Mobile Nav Toggle */}
+          <div className="md:hidden flex items-center gap-4">
+            <Link href="/playground" className="text-white bg-white/10 p-2 rounded-lg border border-white/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </Link>
+            <button className="text-white p-2" onClick={() => document.getElementById('mobile-menu')?.classList.toggle('hidden')}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div id="mobile-menu" className="hidden md:hidden absolute top-full left-0 w-full bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/10 py-4 px-6 flex flex-col gap-4 shadow-2xl">
+          <Link href="/docs" className="text-gray-300 hover:text-white text-lg py-2 border-b border-white/5">Documentation</Link>
+          <Link href="https://github.com/Rohan-Shinde24/Dooms" target="_blank" className="text-gray-300 hover:text-white text-lg py-2 border-b border-white/5">GitHub</Link>
+          <Link href="https://pypi.org/project/dooms/" target="_blank" className="text-gray-300 hover:text-white text-lg py-2">PyPI</Link>
         </div>
       </nav>
 

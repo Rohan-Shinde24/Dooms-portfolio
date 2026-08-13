@@ -39,8 +39,8 @@ export default function Playground() {
           </Link>
           <div className="flex items-center gap-6">
             <span className={`text-sm flex items-center gap-2 font-medium ${isReady ? 'text-green-400' : 'text-yellow-400'}`}>
-              <span className={`w-2.5 h-2.5 rounded-full ${isReady ? 'bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.5)]' : 'bg-yellow-400 animate-pulse'}`}></span>
-              {isReady ? 'Engine Ready' : 'Loading Engine...'}
+              <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${isReady ? 'bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.5)]' : 'bg-yellow-400 animate-pulse'}`}></span>
+              <span className="hidden sm:inline">{isReady ? 'Engine Ready' : 'Loading Engine...'}</span>
             </span>
             <button 
               onClick={handleRun}
