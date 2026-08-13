@@ -40,7 +40,7 @@ To run the website locally:
    npm run dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open [https://dooms-portfolio.vercel.app/](https://dooms-portfolio.vercel.app/) in your browser.
 
 ## 🔗 Important Links
 
