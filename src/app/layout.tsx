@@ -12,28 +12,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DOOMS Language",
+  title: "Doomslang Language",
   description: "A custom, strictly-typed, dynamically evaluated scripting language. Built from scratch with a robust type-checker, OOP support, and expressive syntax.",
   keywords: ["dooms", "programming language", "scripting language", "Rohan Shinde", "python", "oop"],
   authors: [{ name: "Rohan Shinde", url: "https://github.com/Rohan-Shinde24" }],
   openGraph: {
-    title: "DOOMS Programming Language",
+    title: "Doomslang Programming Language",
     description: "A custom, strictly-typed, dynamically evaluated scripting language. Built from scratch with a robust type-checker, OOP support, and expressive syntax.",
     url: "https://github.com/Rohan-Shinde24/Dooms",
-    siteName: "DOOMS",
+    siteName: "Doomslang",
     type: "website",
     images: [
       {
         url: "/image.png",
         width: 1200,
         height: 630,
-        alt: "DOOMS Programming Language Preview",
+        alt: "Doomslang Programming Language Preview",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DOOMS Programming Language",
+    title: "Doomslang Programming Language",
     description: "A custom, strictly-typed, dynamically evaluated scripting language. Built from scratch with a robust type-checker, OOP support, and expressive syntax.",
     images: ["/image.png"],
   },

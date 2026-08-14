@@ -6,6 +6,7 @@ export default function Home() {
   const [copiedInstall, setCopiedInstall] = useState(false);
   const [copiedRun, setCopiedRun] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +39,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto flex justify-between items-center px-6 md:px-12 w-full">
           <div className="flex items-center gap-2 text-2xl font-bold tracking-tighter text-white">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-            DOOMS
+            Doomslang
           </div>
           
           {/* Desktop Nav */}
@@ -57,14 +58,14 @@ export default function Home() {
             <Link href="/playground" className="text-white bg-white/10 p-2 rounded-lg border border-white/20 flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
             </Link>
-            <button className="text-white p-2" onClick={() => document.getElementById('mobile-menu')?.classList.toggle('hidden')}>
+            <button className="text-white p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        <div id="mobile-menu" className="hidden md:hidden absolute top-full left-0 w-full bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/10 py-4 px-6 flex flex-col gap-4 shadow-2xl">
+        <div id="mobile-menu" className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:hidden absolute top-full left-0 w-full bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/10 py-4 px-6 flex-col gap-4 shadow-2xl`}>
           <Link href="/docs" className="text-gray-300 hover:text-white text-lg py-2 border-b border-white/5">Documentation</Link>
           <Link href="https://github.com/Rohan-Shinde24/Dooms" target="_blank" className="text-gray-300 hover:text-white text-lg py-2 border-b border-white/5">GitHub</Link>
           <Link href="https://pypi.org/project/dooms/" target="_blank" className="text-gray-300 hover:text-white text-lg py-2">PyPI</Link>
@@ -75,7 +76,7 @@ export default function Home() {
       <section className="max-w-4xl w-full mt-12 opacity-0 animate-fade-in animate-delay-1 flex flex-col items-center">
         <h1 className="flex items-center gap-4 text-6xl md:text-8xl font-extrabold tracking-tight mb-6 text-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="md:w-20 md:h-20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-          DOOMS
+          Doomslang
         </h1>
         
         <p className="text-xl text-gray-400 mb-8 max-w-2xl leading-relaxed">
@@ -114,11 +115,11 @@ export default function Home() {
         <div className="mb-12">
           <Link href="/playground" className="btn-primary py-3! px-8! text-lg flex items-center gap-2 shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:shadow-[0_0_40px_rgba(139,92,246,0.6)]">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-            Try DOOMS in Browser
+            Try Doomslang in Browser
           </Link>
         </div>
 
-        <p className="text-gray-500 text-sm mb-16">Note: You must have <span className="text-white font-semibold">Python 3.11+</span> installed to run DOOMS locally.</p>
+        <p className="text-gray-500 text-sm mb-16">Note: You must have <span className="text-white font-semibold">Python 3.11+</span> installed to run Doomslang locally.</p>
 
         {/* Creator Info */}
         <div className="flex flex-col items-center gap-4 mb-16">
@@ -192,7 +193,7 @@ export default function Home() {
 
       {/* Features Grid */}
       <section className="w-full max-w-6xl mx-auto px-6 pb-24 text-left">
-        <h2 className="text-3xl font-bold mb-12 text-center">Why use DOOMS?</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">Why use Doomslang?</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="glass-card p-8">
             <h3 className="text-xl font-semibold mb-3 text-white">Strict Type Safety</h3>
@@ -212,7 +213,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full border-t border-white/10 py-12 mt-12">
         <div className="max-w-6xl mx-auto px-6 text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} DOOMS Language. Created by Rohan Shinde.</p>
+          <p>© {new Date().getFullYear()} Doomslang Language. Created by Rohan Shinde.</p>
         </div>
       </footer>
     </main>

@@ -9,7 +9,7 @@ export default function Docs() {
         <div className="p-8">
           <Link href="/" className="flex items-center gap-2 text-2xl font-bold tracking-tighter text-white mb-8">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-            DOOMS
+            Doomslang
           </Link>
           <nav className="flex flex-col gap-4 text-sm font-medium text-gray-400">
             <h4 className="text-xs uppercase text-gray-600 font-bold tracking-wider mt-4 mb-2">Getting Started</h4>
@@ -30,20 +30,20 @@ export default function Docs() {
       <main className="flex-1 md:ml-72 py-12 px-6 lg:px-16">
         <div className="max-w-4xl">
           <h1 className="text-5xl font-bold mb-4">Documentation</h1>
-          <p className="text-xl text-gray-400 mb-16">Learn how to build software with DOOMS, a strictly-typed scripting language.</p>
+          <p className="text-xl text-gray-400 mb-16">Learn how to build software with Doomslang, a strictly-typed scripting language.</p>
 
           <div className="space-y-24">
             
             {/* Install Section */}
             <section id="install" className="scroll-mt-24">
               <h2 className="text-3xl font-semibold mb-6 border-b border-white/10 pb-4">Installation</h2>
-              <p className="text-gray-400 mb-4">DOOMS runs on Python. You must have Python 3.11+ installed. Once Python is ready, you can install DOOMS globally via pip.</p>
+              <p className="text-gray-400 mb-4">Doomslang runs on Python. You must have Python 3.11+ installed. Once Python is ready, you can install Doomslang globally via pip.</p>
               <div className="code-window mb-6">
                 <div className="code-content whitespace-pre text-gray-300">
                   <span className="comment"># Install via pip</span><br/>
                   pip install dooms<br/>
                   <br/>
-                  <span className="comment"># Run a DOOMS script</span><br/>
+                  <span className="comment"># Run a Doomslang script</span><br/>
                   dooms run my_script.dooms
                 </div>
               </div>
@@ -52,11 +52,11 @@ export default function Docs() {
             {/* Variables Section */}
             <section id="variables" className="scroll-mt-24">
               <h2 className="text-3xl font-semibold mb-6 border-b border-white/10 pb-4">Variables and Data Types</h2>
-              <p className="text-gray-400 mb-4">DOOMS is strictly typed. You must declare the type of every variable. Supported types are <code className="text-accent bg-accent/10 px-1 rounded">int</code>, <code className="text-accent bg-accent/10 px-1 rounded">str</code>, <code className="text-accent bg-accent/10 px-1 rounded">boo</code>, and <code className="text-accent bg-accent/10 px-1 rounded">any</code>.</p>
+              <p className="text-gray-400 mb-4">Doomslang is strictly typed. You must declare the type of every variable. Supported types are <code className="text-accent bg-accent/10 px-1 rounded">int</code>, <code className="text-accent bg-accent/10 px-1 rounded">str</code>, <code className="text-accent bg-accent/10 px-1 rounded">boo</code>, and <code className="text-accent bg-accent/10 px-1 rounded">any</code>.</p>
               <div className="code-window">
                 <div className="code-content whitespace-pre">
                   <span className="type">int</span> age = <span className="type">25</span>; <span className="comment">// Integers</span><br/>
-                  <span className="type">str</span> name = <span className="string">"DOOMS"</span>; <span className="comment">// Strings</span><br/>
+                  <span className="type">str</span> name = <span className="string">"Doomslang"</span>; <span className="comment">// Strings</span><br/>
                   <span className="type">boo</span> isAwesome = <span className="type">true</span>; <span className="comment">// Booleans</span><br/>
                   <span className="type">any</span> generic = <span className="type">100</span>; <span className="comment">// Dynamic fallback</span>
                 </div>
@@ -81,7 +81,7 @@ export default function Docs() {
             {/* Arrays Section */}
             <section id="arrays" className="scroll-mt-24">
               <h2 className="text-3xl font-semibold mb-6 border-b border-white/10 pb-4">Arrays and Tuples</h2>
-              <p className="text-gray-400 mb-4">DOOMS supports dynamic arrays (with built-in methods) and strictly typed fixed-size Tuples.</p>
+              <p className="text-gray-400 mb-4">Doomslang supports dynamic arrays (with built-in methods) and strictly typed fixed-size Tuples.</p>
               <div className="code-window">
                 <div className="code-content whitespace-pre">
                   <span className="comment">// Dynamic Arrays (using 'any' wrapper array type)</span><br/>
@@ -115,7 +115,7 @@ export default function Docs() {
             {/* Classes Section */}
             <section id="classes" className="scroll-mt-24">
               <h2 className="text-3xl font-semibold mb-6 border-b border-white/10 pb-4">Object-Oriented Programming</h2>
-              <p className="text-gray-400 mb-4">DOOMS natively supports Classes. The <code className="text-accent bg-accent/10 px-1 rounded">init</code> method acts as the constructor. State is managed via <code className="text-accent bg-accent/10 px-1 rounded">this</code>.</p>
+              <p className="text-gray-400 mb-4">Doomslang natively supports Classes. The <code className="text-accent bg-accent/10 px-1 rounded">init</code> method acts as the constructor. State is managed via <code className="text-accent bg-accent/10 px-1 rounded">this</code>.</p>
               <div className="code-window">
                 <div className="code-content whitespace-pre">
                   <span className="keyword">class</span> <span className="type">Robot</span> {'{\n'}
@@ -138,7 +138,7 @@ export default function Docs() {
             {/* Modules Section */}
             <section id="modules" className="scroll-mt-24">
               <h2 className="text-3xl font-semibold mb-6 border-b border-white/10 pb-4">Modules System</h2>
-              <p className="text-gray-400 mb-4">Import variables and functions from other DOOMS files to keep your codebase organized.</p>
+              <p className="text-gray-400 mb-4">Import variables and functions from other Doomslang files to keep your codebase organized.</p>
               <div className="code-window">
                 <div className="code-content whitespace-pre">
                   <span className="comment">// main.dooms</span><br/>

@@ -1,15 +1,15 @@
-# DOOMS Language Portfolio
+# Doomslang Language Portfolio
 
-![DOOMS Preview](/public/image.png)
+![Doomslang Preview](/public/image.png)
 
-The official website and online playground for **DOOMS** — a custom, strictly-typed, dynamically evaluated scripting language created by Rohan Shinde.
+The official website and online playground for **Doomslang** — a custom, strictly-typed, dynamically evaluated scripting language created by Rohan Shinde.
 
-This repository contains the Next.js frontend code for the DOOMS landing page, documentation, and the in-browser WebAssembly-powered interactive playground.
+This repository contains the Next.js frontend code for the Doomslang landing page, documentation, and the in-browser WebAssembly-powered interactive playground.
 
 ## 🌟 Features
 
 - **Beautiful Landing Page:** A modern, dark-themed hero section with animated backgrounds and interactive command snippets.
-- **Interactive Playground (WebAssembly):** Try DOOMS without installing anything! The playground uses [Pyodide](https://pyodide.org/) to download the `dooms` Python package and execute the interpreter entirely in the browser. Zero server costs, 100% secure.
+- **Interactive Playground (WebAssembly):** Try Doomslang without installing anything! The playground uses [Pyodide](https://pyodide.org/) to download the `dooms` Python package and execute the interpreter entirely in the browser. Zero server costs, 100% secure.
 - **Documentation:** A clean, easy-to-read syntax and language guide covering variables, arrays, OOP, and more.
 - **SEO Optimized:** Full Open Graph support, dynamic meta tags, and Twitter cards configured for beautiful link sharing.
 
@@ -26,8 +26,8 @@ To run the website locally:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Rohan-Shinde24/Dooms-portfolio.git
-   cd dooms_potfolio
+   git clone https://github.com/Rohan-Shinde24/Doomslang-portfolio.git
+   cd doomslang_potfolio
    ```
 
 2. **Install dependencies**
@@ -49,4 +49,4 @@ To run the website locally:
 - **Creator:** [Rohan Shinde on LinkedIn](https://www.linkedin.com/in/rohan-shinde024)
 
 ---
-*Built with ❤️ for the DOOMS programming language.*
+*Built with ❤️ for the Doomslang programming language.*
