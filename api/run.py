@@ -18,12 +18,17 @@ class handler(BaseHTTPRequestHandler):
                 temp_path = f.name
                 
             try:
-                # On Vercel, the dooms package will be installed via requirements.txt
+                # Add the project root to PYTHONPATH so python can find the local 'dooms' folder
+                env = os.environ.copy()
+                project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+                env["PYTHONPATH"] = project_root + os.pathsep + env.get("PYTHONPATH", "")
+                
                 result = subprocess.run(
                     [sys.executable, "-m", "dooms.cli", "run", temp_path],
                     capture_output=True,
                     text=True,
-                    timeout=5
+                    timeout=5,
+                    env=env
                 )
                 output = result.stdout + result.stderr
             except subprocess.TimeoutExpired:
