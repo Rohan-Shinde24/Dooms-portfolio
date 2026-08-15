@@ -115,22 +115,38 @@ export default function Docs() {
             {/* Classes Section */}
             <section id="classes" className="scroll-mt-24">
               <h2 className="text-3xl font-semibold mb-6 border-b border-white/10 pb-4">Object-Oriented Programming</h2>
-              <p className="text-gray-400 mb-4">Doomslang natively supports Classes. The <code className="text-accent bg-accent/10 px-1 rounded">init</code> method acts as the constructor. State is managed via <code className="text-accent bg-accent/10 px-1 rounded">this</code>.</p>
+              <p className="text-gray-400 mb-4">Doomslang natively supports the pillars of Object-Oriented Programming, including Classes, Inheritance, and Access Modifiers.</p>
+              <ul className="list-disc list-inside text-gray-400 mb-4 space-y-1">
+                <li><strong className="text-white">Constructors:</strong> The <code className="text-accent bg-accent/10 px-1 rounded">init</code> method acts as the constructor. State is managed via <code className="text-accent bg-accent/10 px-1 rounded">this</code>.</li>
+                <li><strong className="text-white">Inheritance:</strong> Use <code className="text-accent bg-accent/10 px-1 rounded">extends</code> to inherit from parent classes, and call the parent constructor with <code className="text-accent bg-accent/10 px-1 rounded">super()</code>.</li>
+                <li><strong className="text-white">Access Modifiers:</strong> Control field and method visibility with <code className="text-accent bg-accent/10 px-1 rounded">public</code>, <code className="text-accent bg-accent/10 px-1 rounded">private</code>, and <code className="text-accent bg-accent/10 px-1 rounded">protected</code> keywords.</li>
+              </ul>
               <div className="code-window">
                 <div className="code-content whitespace-pre">
-                  <span className="keyword">class</span> <span className="type">Robot</span> {'{\n'}
-                  {'    '}<span className="keyword">func</span> <span className="function">init</span>(<span className="type">str</span> name) {'{\n'}
-                  {'        '}<span className="keyword">this</span>.name = name;<br/>
-                  {'    }'}<br/>
+                  <span className="keyword">class</span> <span className="type">Animal</span> {'{\n'}
+                  {'    '}<span className="keyword">protected</span> <span className="type">str</span> name;<br/>
                   <br/>
-                  {'    '}<span className="keyword">func</span> <span className="function">activate</span>() {'{\n'}
-                  {'        '}<span className="function">print</span>(<span className="keyword">this</span>.name, <span className="string">"is now active!"</span>);<br/>
+                  {'    '}<span className="keyword">public</span> <span className="keyword">func</span> <span className="function">init</span>(<span className="type">str</span> name) {'{\n'}
+                  {'        '}<span className="keyword">this</span>.name = name;<br/>
                   {'    }'}<br/>
                   {'}'}<br/>
                   <br/>
-                  <span className="comment">// Instantiate simply by calling the class name</span><br/>
-                  <span className="type">any</span> bot = <span className="function">Robot</span>(<span className="string">"T-800"</span>);<br/>
-                  bot.<span className="function">activate</span>();
+                  <span className="keyword">class</span> <span className="type">Dog</span> <span className="keyword">extends</span> <span className="type">Animal</span> {'{\n'}
+                  {'    '}<span className="keyword">private</span> <span className="type">boo</span> isGoodBoy;<br/>
+                  <br/>
+                  {'    '}<span className="keyword">public</span> <span className="keyword">func</span> <span className="function">init</span>(<span className="type">str</span> name, <span className="type">boo</span> isGoodBoy) {'{\n'}
+                  {'        '}<span className="keyword">super</span>(name);<br/>
+                  {'        '}<span className="keyword">this</span>.isGoodBoy = isGoodBoy;<br/>
+                  {'    }'}<br/>
+                  <br/>
+                  {'    '}<span className="keyword">public</span> <span className="keyword">func</span> <span className="function">speak</span>() {'{\n'}
+                  {'        '}<span className="function">print</span>(<span className="keyword">this</span>.name + <span className="string">" says woof!"</span>);<br/>
+                  {'    }'}<br/>
+                  {'}'}<br/>
+                  <br/>
+                  <span className="comment">// Instantiate and call methods</span><br/>
+                  <span className="type">any</span> myDog = <span className="function">Dog</span>(<span className="string">"Buddy"</span>, <span className="type">true</span>);<br/>
+                  myDog.<span className="function">speak</span>();
                 </div>
               </div>
             </section>

@@ -22,11 +22,6 @@ export default function Home() {
     setTimeout(() => setCopiedInstall(false), 2000);
   };
 
-  const copyRun = () => {
-    navigator.clipboard.writeText("dooms run main.dooms");
-    setCopiedRun(true);
-    setTimeout(() => setCopiedRun(false), 2000);
-  };
 
   return (
     <main className="min-h-screen relative overflow-hidden flex flex-col items-center pt-24 px-6 text-center">
@@ -99,17 +94,7 @@ export default function Home() {
           </div>
 
           {/* Run Command */}
-          <div className="flex items-center bg-[#0d0d0d] border border-white/10 rounded-xl px-6 py-4 shadow-2xl relative group cursor-pointer transition-all hover:border-accent" onClick={copyRun} title="Copy Run Command">
-            <span className="text-gray-500 mr-4 font-mono">$</span>
-            <code className="text-white font-mono text-lg mr-8">dooms run main.dooms</code>
-            <button className="text-gray-400 hover:text-white transition-colors">
-              {copiedRun ? (
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#27c93f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              )}
-            </button>
-          </div>
+          
         </div>
         
         <div className="mb-12">
