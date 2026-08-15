@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
-import { exec } from 'child_process';
+import { execFile } from 'child_process';
 import { promisify } from 'util';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as os from 'os';
 
-const execAsync = promisify(exec);
+const execFileAsync = promisify(execFile);
 
 export async function POST(request: Request) {
   try {
@@ -26,7 +26,7 @@ export async function POST(request: Request) {
       // Execute the dooms code by pointing directly to the python module
       // This assumes the Next.js app is next to the Dooms language directory
       const doomsDir = path.resolve(process.cwd(), '../Dooms');
-      const { stdout, stderr } = await execAsync(`python -m dooms.cli run "${tempFilePath}"`, { 
+      const { stdout, stderr } = await execFileAsync('python', ['-m', 'dooms.cli', 'run', tempFilePath], { 
         timeout: 5000,
         cwd: doomsDir
       });
