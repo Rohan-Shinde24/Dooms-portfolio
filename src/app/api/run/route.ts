@@ -29,7 +29,7 @@ export async function POST(request: Request) {
       const { stdout, stderr } = await execFileAsync('python', ['-m', 'dooms.cli', 'run', tempFilePath], { 
         timeout: 5000,
         cwd: doomsDir,
-        shell: true
+        shell: process.platform === 'win32' ? 'cmd.exe' : true
       });
       
       // Clean up temp file
