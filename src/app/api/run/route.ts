@@ -28,7 +28,8 @@ export async function POST(request: Request) {
       const doomsDir = path.resolve(process.cwd(), '../Dooms');
       const { stdout, stderr } = await execFileAsync('python', ['-m', 'dooms.cli', 'run', tempFilePath], { 
         timeout: 5000,
-        cwd: doomsDir
+        cwd: doomsDir,
+        shell: true
       });
       
       // Clean up temp file
