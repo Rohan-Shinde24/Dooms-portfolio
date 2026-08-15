@@ -23,8 +23,13 @@ export async function POST(request: Request) {
     fs.writeFileSync(tempFilePath, code, 'utf8');
 
     try {
-      // Execute the dooms code with a timeout of 5 seconds to prevent infinite loops
-      const { stdout, stderr } = await execAsync(`dooms run "${tempFilePath}"`, { timeout: 5000 });
+      // Execute the dooms code by pointing directly to the python module
+      // This assumes the Next.js app is next to the Dooms language directory
+      const doomsDir = path.resolve(process.cwd(), '../Dooms');
+      const { stdout, stderr } = await execAsync(`python -m dooms.cli run "${tempFilePath}"`, { 
+        timeout: 5000,
+        cwd: doomsDir
+      });
       
       // Clean up temp file
       fs.unlinkSync(tempFilePath);
